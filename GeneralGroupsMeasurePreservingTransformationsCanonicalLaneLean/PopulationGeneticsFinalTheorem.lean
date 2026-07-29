@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import GeneralGroupsMeasurePreservingTransformationsCanonicalLaneLean.HardyWeinbergEquilibrium
+import GeneralGroupsMeasurePreservingTransformationsCanonicalLaneLean.LinkageAnalysis
+import GeneralGroupsMeasurePreservingTransformationsCanonicalLaneLean.SequenceAlignment
+import GeneralGroupsMeasurePreservingTransformationsCanonicalLaneLean.Phylogenetics
+
+namespace HautevilleHouse
+namespace GeneralGroupsMeasurePreservingTransformationsCanonicalLaneLean
+
+def ConstrainedPopulationGeneticsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_population_genetics_endgame (A : AdmissibleClass) : ConstrainedPopulationGeneticsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end GeneralGroupsMeasurePreservingTransformationsCanonicalLaneLean
+end HautevilleHouse
